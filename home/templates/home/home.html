@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p}}
+		<button type="submit">submit</button>
+	</form>
+	
+	<h2> {{ text }} </h2>
+	{% for x in posts %}
+		<h1> {{x.post}} </h1>
+		<p>Posted by {{x.user}} on {{x.date}} </p>
+	{% endfor %}
+</div>
+{% endblock %}
