@@ -12,6 +12,8 @@
 	<p> Description: {{user.userprofile.description}} </p>
 	<p> Phone: {{user.userprofile.phone}} </p>
 	<p> Image: </p>
+	{% if userprofile.image %}
 	<img src="{{ user.userprofile.image.url }}" width="240">
+	{% endif %}
 	{% endblock %}
 </div>
